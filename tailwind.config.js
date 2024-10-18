@@ -27,8 +27,20 @@ module.exports = {
     },
     variants: {
         extend: {
+            // 添加dark变体，但是通常无法自定义变体，因为tailwindcss内核并不支持自定义变体，除非自己写一个plugin进行解读
             backgroundImage: ["dark"],
+
+            // textColor: ['a'],  // 允许 textColor 使用自定义的 a 变体
         },
     },
     plugins: [],
+    // plugins: [
+    //     function ({ addVariant, e }) {
+    //       addVariant('a', ({ modifySelectors, separator }) => {
+    //         modifySelectors(({ className }) => {
+    //           return `a.${e(`a${separator}${className}`)}`;
+    //         });
+    //       });
+    //     },
+    //   ],
 };
